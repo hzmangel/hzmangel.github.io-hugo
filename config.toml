@@ -1,0 +1,10 @@
+baseurl = "http://hzmangel.github.io/"
+languageCode = "zh-cn"
+title = "湖间小筑"
+theme = "hugo-twenty-ten"
+copyright = "Copyright - ©2015 - hzmangel"
+disqusShortname = "hzmangel"
+
+
+[params]
+  Description = "蓝天，小湖，湖水中一方小筑"
