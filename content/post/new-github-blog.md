@@ -4,8 +4,8 @@ comments = true
 date = "2015-06-13T11:36:18+08:00"
 draft = false
 share = true
-slug = "post-title"
-tags = []
+slug = "new-github-blog"
+tags = ["Programming", "blog", "meta"]
 title = "Blog搬(zhe)家(teng)记"
 +++
 
@@ -16,6 +16,8 @@ title = "Blog搬(zhe)家(teng)记"
 * 能用Markdown写。除了写着舒服外，这不是还能装13嘛～
 * 之前那些内容能弄过来，折腾来折腾去弄了这么久，之前的东西还是想保留下的。
 * 模板稍微好看点（不过这个最后证实了还是需要自己弄，诶）。
+
+<!--more-->
 
 ## Hugo
 
