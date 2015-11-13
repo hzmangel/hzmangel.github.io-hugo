@@ -41,7 +41,7 @@ title: |
 
 遍历每个 *Community* `$A$` 中的节点对，以 `$P_{A}$` 的概率连接它们（边的生成）。
 
-任意两点间的连接概率为`$P(u,v)=1-\prod_{c \in M_{u} \bigcap M_{v}}(1-p_{c}) $` 。其中，`$M_{u}$` 表示包含有节点 `$u$` 的 *Community* 集合。如果 `$u$` 和 `$v$` 没有共用的 *Community* ，则概率 `$P(u,v) = \upepsilon $` 。
+任意两点间的连接概率为`$P(u,v)=1-\prod_{c \in M_{u} \bigcap M_{v}}(1-p_{c}) $` 。其中，`$M_{u}$` 表示包含有节点 `$u$` 的 *Community* 集合。如果 `$u$` 和 `$v$` 没有共用的 *Community* ，则概率 `$P(u,v) = \epsilon $` 。
 
 
 #### 适应性强
