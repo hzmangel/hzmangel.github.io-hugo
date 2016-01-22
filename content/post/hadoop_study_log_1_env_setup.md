@@ -18,6 +18,10 @@ title: |
 
 <!--more-->
 
+**Update**
+
+* 2016.01.22: 按照[Hadoop官方wiki](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html)配置的环境在尝试运行程序时会报连不上Node的错误，不知道是哪里的问题。后来在[DigitalOcean的文档](https://www.digitalocean.com/community/tutorials/how-to-install-hadoop-on-ubuntu-13-10)中发现了需要改Namenode和Datanode的配置才可以。已经将文中的链接和所需修改的文件列表更新。
+
 ## 基本概念
 
 这里只是一些我之前可能弄混淆的概念，其它的一些东西可能需要去hadoop官网看了。
@@ -58,10 +62,23 @@ title: |
     $ export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
     ```
 
-    并根据[此页面](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html)中的内容，修改相应文件并配置SSH服务。
+    并根据[此页面](https://www.digitalocean.com/community/tutorials/how-to-install-hadoop-on-ubuntu-13-10)中的内容，修改相应文件并配置SSH服务。
 
-      * etc/hadoop/core-site.xml:
-      * etc/hadoop/hdfs-site.xml:
+      * etc/hadoop/core-site.xml
+
+        Hadoop启动时的设置，上面那个页面中给出的是 `fs.default.name` ，不过在新的配置中，这个字段应该变成 `fs.defaultFS` 。
+
+      * etc/hadoop/yarn-site.xml
+
+        一些MapReduce的设置选项。
+
+      * etc/hadoop/mapred-site.xml
+
+        配置使用Yarn作为ResManager
+
+      * etc/hadoop/hdfs-site.xml
+
+        配置Namenode和Datanode的路径信息
 
 1. 格式化namenode
 
