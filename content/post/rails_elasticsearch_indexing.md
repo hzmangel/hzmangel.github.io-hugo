@@ -189,4 +189,18 @@ ES 还提供了一些内置的 *Analyzer* ，可以在 [这里](https://www.elas
 
 ### *Mapping*
 
-对于输入的文本内容，ES会默认将此字段映射为 *string* 类型，并使用 *standard analyzer* ，如果需要一些特殊处理，就需要引入 *Mapping* 了。 *Mapping* 的作用是告诉 ES 某个字段需要按什么样的规则处理。
+对于输入的文本内容，ES会默认将此字段映射为 *string* 类型，并使用 *standard analyzer* ，如果需要一些特殊处理，就需要引入 *Mapping* 了。 *Mapping* 的作用是告诉 ES 某个字段需要按什么样的规则处理。例如一个手机号， ES 的默认处理是按长整形，但是可能需要按字符串处理，这时就需要指定 *Mapping* 了。
+
+在 Rails 的 Model 中，可以通过下面的方法来设置字段的 *Analyzer* 和 *Mapping Type* ，如下所示：
+
+```ruby
+settings do
+  mappings do
+    indexes :title, analyzer: 'english'
+  end
+end
+```
+
+在上述的例子中，原本 *title* 字段的 *analyzer* 被指定为 *english* 而不是默认的 *string* 。
+
+Q: 为什么设定了type后，import返回值为1，而不设的时候返回是0？
